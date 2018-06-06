@@ -17,6 +17,8 @@ public class interestRateCalculator
         double walletTotal = 0;
         int numberOfPeople;
         double perPersonInterest = 0;
+        double perWalletTotal = 0;
+        double perPersonTotal = 0;
 
         out.println("Interest Rate Calculator");
         out.println();
@@ -37,25 +39,28 @@ public class interestRateCalculator
 
                 while (numberOfCards != 0)
                 {
-                    out.print("What is the card brand? ");
+                    out.print("What is the card brand? Visa, Mastercard, Discover ");
                     cardBrand = keyboard.next();
 
                     cardInterestRate = getInterestRate(cardBrand);
 
                     out.print("What is the balance on the card? ");
                     cardBalance = keyboard.nextDouble();
+                    out.println();
 
                     cardInterest = getCardInterest(cardInterestRate, cardBalance);
-                    walletTotal += cardInterest;
-                    perPersonInterest += walletTotal;
+                    perWalletTotal = walletTotal += cardInterest;
 
-                    out.println("The total interest for this " + cardBrand + " is " + cardInterest);
+                    out.println("The total interest for this " + cardBrand + " is $" + cardInterest);
+                    out.println();
                     numberOfCards--;
                 }
-                out.println("The total interest for this wallet is " + walletTotal);
+                out.println("The total interest for this wallet is $" + perWalletTotal);
+                out.println();
                 numberOfWallets--;
             }
-            out.println("The total interest for this person is " + perPersonInterest);
+            perPersonTotal = perPersonInterest += perWalletTotal;
+            out.println("The total interest for this person is $" + perPersonTotal);
             numberOfPeople--;
         }
 
