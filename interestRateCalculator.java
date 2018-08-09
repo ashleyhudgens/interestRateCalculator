@@ -1,17 +1,22 @@
 import static java.lang.System.out;
 
-public class interestRateCalculator {
-    private static double cardBalance(double balance) {
+public class interestRateCalculator 
+{
+    private static double cardBalance(double balance) 
+    {
         return balance;
     }
 
-    private static void people(int caseNumber) {
-        if (caseNumber == 1) {
+    private static void people(int caseNumber) 
+    {
+        if (caseNumber == 1) 
+        {
             int numberOfPeople = 1;
             out.println("Calculating interest rate for " + numberOfPeople + " person.");
             double oneWallet = caseOneWallet(1);
             out.println("The total interest for this person is $" + oneWallet);
-        } else if (caseNumber == 2) {
+        } else if (caseNumber == 2) 
+        {
             int numberOfPeople = 1;
             out.println();
             out.println("Calculating interest rate for " + numberOfPeople + " person.");
