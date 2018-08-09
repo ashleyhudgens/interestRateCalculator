@@ -1,100 +1,96 @@
-//import modules
 import static java.lang.System.out;
-import java.util.Scanner;
+
 
 public class interestRateCalculator
 {
-    public static void main(String[] args)
+    public static double cardBalance(double balance)
     {
-        //declare variables
-        Scanner keyboard = new Scanner(System.in);
-        String cardBrand;
-        double cardInterestRate;
-        double cardInterest;
-        double cardBalance;
-        int numberOfCards;
-        int numberOfWallets;
-        double walletTotal = 0;
-        int numberOfPeople;
-        double perPersonInterest = 0;
-        double perWalletTotal = 0;
-        double perPersonTotal = 0;
+        return balance;
+    }
 
-        out.println("Interest Rate Calculator");
+    public static double people(int numberOfPeople)
+    {
+        double interest = 0;
+            if (numberOfPeople == 1) {
+                out.println("Calculating interest rate for " + numberOfPeople + " person.");
+                wallets(1);
+                out.println("Calculating interest rate for " + numberOfPeople + " person.");
+
+                wallets(2);
+                numberOfPeople--;
+            }
+
+        return interest;
+    }
+
+    public static double wallets(int numberOfWallets)
+    {
+        double perPerson = 0;
+        if (numberOfWallets == 1) {
+            out.println("Calculating interest rate for " + numberOfWallets + " wallet.");
+            double walletOne = cards(3);
+            perPerson = walletOne;
+        } else if (numberOfWallets == 2)
+        {
+            out.println("Calculating interest rate for " + numberOfWallets + " wallets.");
+            double walletOne = cards(2);
+            double walletTwo = cards(1);
+            perPerson = walletOne + walletTwo;
+        }
+        out.println("The total interest for this person is $" + perPerson);
         out.println();
 
-        //run through each person to get total interest rate per card, per wallet and per person
-        out.print("How many people? ");
-        numberOfPeople = keyboard.nextInt();
+        return perPerson;
+    }
 
-        while (numberOfPeople != 0)
+    public static double cards(int numberOfCards)
+    {
+        double perWallet = 0;
+        if (numberOfCards == 3) {
+            out.println("Calculating interest rate for " + numberOfCards + " cards.");
+            double cardOne = brand("Visa");
+            double cardTwo = brand("Discover");
+            double cardThree = brand("MasterCard");
+            perWallet = cardOne + cardTwo + cardThree;
+        } else if (numberOfCards == 2)
         {
-            out.print("How many wallets? ");
-            numberOfWallets = keyboard.nextInt();
-
-            while (numberOfWallets != 0)
-            {
-                out.print("How many cards? ");
-                numberOfCards = keyboard.nextInt();
-
-                while (numberOfCards != 0)
-                {
-                    out.print("What is the card brand? Visa, Mastercard, Discover ");
-                    cardBrand = keyboard.next();
-
-                    cardInterestRate = getInterestRate(cardBrand);
-
-                    out.print("What is the balance on the card? ");
-                    cardBalance = keyboard.nextDouble();
-                    out.println();
-
-                    cardInterest = getCardInterest(cardInterestRate, cardBalance);
-                    perWalletTotal = walletTotal += cardInterest;
-
-                    out.println("The total interest for this " + cardBrand + " is $" + cardInterest);
-                    out.println();
-                    numberOfCards--;
-                }
-                out.println("The total interest for this wallet is $" + perWalletTotal);
-                out.println();
-                numberOfWallets--;
-            }
-            perPersonTotal = perPersonInterest += perWalletTotal;
-            out.println("The total interest for this person is $" + perPersonTotal);
-            numberOfPeople--;
+            double cardOne = brand("Visa");
+            double cardTwo = brand("Discover");
+            perWallet = cardOne + cardTwo;
+        } else if (numberOfCards == 1)
+        {
+            double cardOne = brand("MasterCard");
+            perWallet = cardOne;
         }
-
+        out.println("Total interest for this wallet is $" + perWallet);
+        return perWallet;
     }
 
-    private static double getCardInterest (double cardInterestRate, double cardBalance)
+    public static double brand(String cardBrand)
     {
-        //calculates total interest per card depending on the current balance on the card and current interest rate
-        return cardInterestRate * cardBalance;
-    }
+        double cardInterest = 0;
 
-
-    private static double getInterestRate (String cardBrand)
-    {
-        //determines current interest rate according to card brand
-        double interestRate = 0;
-
-        switch (cardBrand)
-        {
-            case "Mastercard":
-                interestRate = .05;
+        switch (cardBrand) {
+            case "MasterCard":
+                cardInterest = .05;
                 break;
             case "Visa":
-                interestRate = .1;
+                cardInterest = .1;
                 break;
             case "Discover":
-                interestRate = .01;
+                cardInterest = .01;
                 break;
             default:
-                out.println("Invalid input");
+                out.println("Invalid card brand");
                 break;
         }
-       return interestRate;
+        double totalCardInterest = cardBalance(100) * cardInterest;
+        out.println("The interest rate for this " + cardBrand + " card is $" + totalCardInterest);
+        return totalCardInterest;
     }
 
+    public static void main(String[] args)
+    {
+        double caseOne = people(1);
+    }
 }
-
