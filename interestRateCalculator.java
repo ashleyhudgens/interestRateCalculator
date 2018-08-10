@@ -2,12 +2,12 @@ import static java.lang.System.out;
 
 public class interestRateCalculator 
 {
-    private static double cardBalance(double balance) 
+    public static double cardBalance(double balance) 
     {
         return balance;
     }
 
-    private static void people(int caseNumber) 
+    public static void example(int caseNumber) 
     {
         if (caseNumber == 1) 
         {
@@ -37,7 +37,7 @@ public class interestRateCalculator
     }
 
 
-    private static double caseThreeSecondPersonWallet(int numberOfWallets)
+    public static double caseThreeSecondPersonWallet(int numberOfWallets)
     {
         double cardOne = brand("MasterCard");
         double cardTwo = brand("Visa");
@@ -46,7 +46,7 @@ public class interestRateCalculator
         return totalWalletInterest;
     }
 
-    private static double caseThreeFirstPersonWallet(int numberOfWallets)
+    public static double caseThreeFirstPersonWallet(int numberOfWallets)
     {
         double cardOne = brand("MasterCard");
         double cardTwo = brand("Visa");
@@ -56,7 +56,7 @@ public class interestRateCalculator
     }
 
 
-    private static double caseTwoWalletTwo(int numberOfWallets)
+    public static double caseTwoWalletTwo(int numberOfWallets)
     {
         double cardOne = brand("MasterCard");
         double totalWalletInterest = cardOne;
@@ -64,7 +64,7 @@ public class interestRateCalculator
         return totalWalletInterest;
     }
 
-    private static double caseTwoWalletOne (int numberOfWallets)
+    public static double caseTwoWalletOne (int numberOfWallets)
     {
         out.println("Calculating interest rate for " + numberOfWallets + " wallets.");
         double cardOne = brand("Visa");
@@ -76,7 +76,7 @@ public class interestRateCalculator
     }
 
 
-    private static double caseOneWallet(int numberOfWallets)
+    public static double caseOneWallet(int numberOfWallets)
     {
         out.println("Calculating interest rate for " + numberOfWallets + " wallet.");
         double cardOne = brand("Visa");
@@ -88,11 +88,12 @@ public class interestRateCalculator
         return totalWalletInterest;
     }
 
-    private static double brand(String cardBrand)
+    public static double brand(String cardBrand)
     {
         double cardInterest = 0;
 
-        switch (cardBrand) {
+        switch (cardBrand) 
+        {
             case "MasterCard":
                 cardInterest = .05;
                 break;
@@ -113,8 +114,8 @@ public class interestRateCalculator
 
     public static void main(String[] args)
     {
-        people(1);
-        people(2);
-        people(3);
+        example(1);
+        example(2);
+        example(3);
     }
 }
