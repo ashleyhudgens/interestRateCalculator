@@ -38,7 +38,7 @@ public class Wallet
         //case three set up to calculate wallet for second person
         MasterCard caseThreeWalletTwoCardOne = new MasterCard(1);
         Visa caseThreeWalletTwoCardTwo = new Visa(1);
-        interestRatePerWalletCaseTwoWalletTwo = caseThreeWalletTwoCardTwo.visaCardInterestRate + caseThreeWalletTwoCardOne.masterCardInterestRate;
+        getInterestRatePerWalletCaseThreeWalletTwo = caseThreeWalletTwoCardTwo.visaCardInterestRate + caseThreeWalletTwoCardOne.masterCardInterestRate;
 
 
     }

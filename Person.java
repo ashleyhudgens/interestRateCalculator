@@ -13,26 +13,21 @@ class Person
 
     Person(int numberOfPeople)
     {
-        //set up for case one wallet one
+        //set up for case one person one
         Wallet caseOneWalletOne = new Wallet(1);
         interestRatePerPersonCaseOne = caseOneWalletOne.interestRatePerWalletCaseOne;
 
-        //set up for case two wallet one
+        //set up for case two person one
         Wallet caseTwoWalletOne = new Wallet(1);
-        interestRatePerPersonCaseTwo = caseTwoWalletOne.interestRatePerWalletCaseTwoWalletOne + caseTwoWalletOne.interestRatePerWalletCaseTwoWalletTwo;
-
-        //set up for case two wallet two
         Wallet caseTwoWalletTwo = new Wallet(1);
-        interestRatePerPersonCaseTwo = caseTwoWalletTwo.interestRatePerWalletCaseTwoWalletTwo;
+        interestRatePerPersonCaseTwo = caseTwoWalletOne.interestRatePerWalletCaseTwoWalletOne + caseTwoWalletTwo.interestRatePerWalletCaseTwoWalletTwo;
 
+        //set up for case three person one
         Wallet caseThreeWalletOne = new Wallet(1);
-
-        Wallet caseThreeWalletTwo = new Wallet(1);
-
-
-
         interestRatePerPersonCaseThreePersonOne = caseThreeWalletOne.interestRatePerWalletCaseThreeWalletOne;
 
+        //set up for case three person two
+        Wallet caseThreeWalletTwo = new Wallet(1);
         interestRatePerPersonCaseThreePersonTwo = caseThreeWalletTwo.getInterestRatePerWalletCaseThreeWalletTwo;
     }
 }

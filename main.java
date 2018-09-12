@@ -1,14 +1,11 @@
-import java.text.NumberFormat;
-import java.util.Locale;
-
-import static java.lang.System.getenv;
 import static java.lang.System.out;
 
 public class main
 {
-
     public static void main(String[] args)
     {
+
+
         //case one: one person, one wallet, three cards [MasterCard, Visa, Discover]
         //gets all three card interest totals for case one
         MasterCard caseOneCardOne = new MasterCard(1);
@@ -78,10 +75,5 @@ public class main
         //get case three person two interest total
         Person caseThreePersonTwo = new Person(1);
         out.println("The interest rate for this person is $" + caseThreePersonTwo.interestRatePerPersonCaseThreePersonTwo);
-
-
-
-
-
     }
 }
